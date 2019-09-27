@@ -1,4 +1,5 @@
 import cv2
+import tkinter
 moarjpeg = cv2.imread('messi5.jpg' , 0)
 print(moarjpeg)
 cv2.imshow('image', moarjpeg)
