@@ -2,7 +2,6 @@ import cv2
 import tkinter
 import numpy
 from appJar import gui
-app = gui()
 
 moarjpeg = cv2.imread('messi5.jpg')
 grayjpg = cv2.cvtColor(moarjpeg, cv2.COLOR_BGR2GRAY)
@@ -22,6 +21,7 @@ cv2.waitKey(2000)
 cv2.destroyAllWindows()
 print(matched)
 
+app = gui("Login Window", "400x200")
 app.addLabel("title", "AppJar Testing")
 app.setLabelBg("title", "white")
 app.addLabelEntry("Username")
