@@ -22,10 +22,18 @@ cv2.waitKey(2000)
 cv2.destroyAllWindows()
 print(matched)
 
-app.addLabel("title", "Welcome to appJar")
-app.setLabelBg("title", "purple")
+app.addLabel("title", "AppJar Testing")
+app.setLabelBg("title", "white")
 app.addLabelEntry("Username")
 app.addLabelSecretEntry("Password")
+def press(button):
+    if button == "Cancel":
+        app.stop()
+    else:
+        usr = app.getEntry("Username")
+        pwd = app.getEntry("Password")
+        print("User:", usr, "Pass:", pwd)
+app.addButtons(["Submit", "Cancel"], press)
 app.go()
 
 #cv2.imwrite('dark_mess.jpeg', moarjpeg)
