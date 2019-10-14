@@ -1,5 +1,4 @@
 import cv2
-import tkinter
 import numpy
 from appJar import gui
 
@@ -39,4 +38,3 @@ app.go()
 #cv2.imwrite('dark_mess.jpeg', moarjpeg)
 #nummies = [4, 5, 6, 82]
 #print(nummies)
-#m = tkinter.Tk()
