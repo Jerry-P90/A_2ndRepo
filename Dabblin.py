@@ -22,6 +22,7 @@ print(matched)
 
 app = gui("Login Window", "400x200")
 app.addLabel("title", "AppJar Testing")
+app.setBg("light blue")
 app.setLabelBg("title", "white")
 app.addLabelEntry("Username")
 app.addLabelSecretEntry("Password")
