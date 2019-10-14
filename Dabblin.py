@@ -19,11 +19,15 @@ cv2.rectangle(moarjpeg,top_left, bottom_right, 255, 2)
 #print(moarjpeg)
 cv2.imshow('image', moarjpeg)
 cv2.waitKey(2000)
+cv2.destroyAllWindows()
 print(matched)
 
 app.addLabel("title", "Welcome to appJar")
-app.setLabelBg("title", "red")
+app.setLabelBg("title", "purple")
+app.addLabelEntry("Username")
+app.addLabelSecretEntry("Password")
 app.go()
+
 #cv2.imwrite('dark_mess.jpeg', moarjpeg)
 #nummies = [4, 5, 6, 82]
 #print(nummies)
