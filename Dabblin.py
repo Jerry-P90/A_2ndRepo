@@ -36,7 +36,7 @@ def press(button):
         print("User:", usr, "Pass:", pwd)
 app.addButtons(["Submit", "Cancel"], press)
 app.addButton("Insert image", press)
-app.addImage("Ex", 'think_spin.')
+app.setBgImage('think_spin.gif')
 
 app.addWebLink("View the code", "https://github.com/Jerry-P90/A_2ndRepo/blob/master/Dabblin.py")
 app.go()
