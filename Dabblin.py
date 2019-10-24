@@ -5,6 +5,7 @@ from appJar import gui
 import tkinter as Tk
 
 #OpenCV
+#Template Matching
 moarjpeg = cv2.imread('messi5.jpg')
 grayjpg = cv2.cvtColor(moarjpeg, cv2.COLOR_BGR2GRAY)
 newtemp = cv2.imread('messi_face.jpg' , 0)
@@ -20,21 +21,19 @@ cv2.waitKey(2000)
 cv2.destroyAllWindows()
 print(matched)
 
-#ORB Matching
-
+#Feature Matching
 img1 = cv2.imread('brick_house.jpg', 0)
-img2 = cv2.imread('brick.jpg', 0)
+img2 = cv2.imread('brick_wall.jpg', 0)
 orb = cv2.ORB_create()
 kp1, desc1 = orb.detectAndCompute(img1,None)
 kp2, desc2 = orb.detectAndCompute(img2,None)
 bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
 matches = bf.match(desc1,desc2)
 matches = sorted(matches, key = lambda x:x.distance)
-img3 = cv2.drawMatches(img1,kp1,img2,kp2,matches[:20],None,flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
+img3 = cv2.drawMatches(img1,kp1,img2,kp2,matches[:10],None,flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
 plt.imshow(img3),plt.show()
 
 #AppJar
-
 app = gui("Login Window", "400x200")
 app.addLabel("title", "AppJar Testing")
 app.setBg("light blue")
