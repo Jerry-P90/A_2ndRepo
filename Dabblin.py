@@ -20,23 +20,10 @@ cv2.waitKey(2000)
 cv2.destroyAllWindows()
 print(matched)
 
-#Multiple Template Matching
-img_rgb = cv2.imread('mario.png')
-img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
-template = cv2.imread('mario_coin.png',0)
-w, h = template.shape[::-1]
-
-res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
-threshold = 0.8
-loc = np.where( res >= threshold)
-for pt in zip(*loc[::-1]):
-    cv2.rectangle(img_rgb, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
-
-cv2.imwrite('res.png',img_rgb)
 
 #Feature Matching
-img1 = cv2.imread('brick_house2.jpg', 0)
-img2 = cv2.imread('brick_wall.jpg', 0)
+img1 = cv2.imread('brick_house.jpg', 0)
+img2 = cv2.imread('brick.png', 0)
 orb = cv2.ORB_create()
 kp1, desc1 = orb.detectAndCompute(img1,None)
 kp2, desc2 = orb.detectAndCompute(img2,None)
