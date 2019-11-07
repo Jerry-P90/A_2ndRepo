@@ -20,7 +20,6 @@ cv2.destroyAllWindows()
 print(matched)
 
 #Multi template matching
-
 img_rgb = cv2.imread('brick_house.jpg')
 img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
 template = cv2.imread('brick.png',0)
