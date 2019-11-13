@@ -64,7 +64,6 @@ def press(button):
         cv2.waitKey(2000)
         cv2.destroyAllWindows()
         print(matched)
-        app.stop()
     elif button == "Feature Match":
         img1 = cv2.imread('brick_house.jpg', 0)
         img2 = cv2.imread('brick.png', 0)
