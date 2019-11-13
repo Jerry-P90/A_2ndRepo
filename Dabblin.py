@@ -77,7 +77,10 @@ def press(button):
         img3 = cv2.drawMatches(img1, kp1, img2, kp2, matches[:10], None,
                                flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
         plt.imshow(img3), plt.show()
+    elif button == "Close Program":
+        app.stop()
 app.addButton("Match Images", press)
 app.addButton("Feature Match", press)
+app.addButton("Close Program", press)
 app.addWebLink("View the code", "https://github.com/Jerry-P90/A_2ndRepo/blob/master/Dabblin.py")
 app.go()
