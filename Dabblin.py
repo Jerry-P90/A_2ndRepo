@@ -50,7 +50,7 @@ app.addLabel("title", "AppJar Testing")
 app.setBg("light blue")
 app.setLabelBg("title", "white")
 def press(button):
-    if button == "Match Images":
+    if button == "Image Matching":
         moarjpeg = cv2.imread('messi5.jpg')
         grayjpg = cv2.cvtColor(moarjpeg, cv2.COLOR_BGR2GRAY)
         newtemp = cv2.imread('messi_face.jpg', 0)
@@ -64,7 +64,7 @@ def press(button):
         cv2.waitKey(2000)
         cv2.destroyAllWindows()
         print(matched)
-    elif button == "Feature Match":
+    elif button == "Feature Matching":
         img1 = cv2.imread('brick_house.jpg', 0)
         img2 = cv2.imread('brick.png', 0)
         orb = cv2.ORB_create()
@@ -78,8 +78,8 @@ def press(button):
         plt.imshow(img3), plt.show()
     elif button == "Close Program":
         app.stop()
-app.addButton("Match Images", press)
-app.addButton("Feature Match", press)
+app.addButton("Image Matching", press)
+app.addButton("Feature Matching", press)
 app.addButton("Close Program", press)
 app.addWebLink("View the code", "https://github.com/Jerry-P90/A_2ndRepo/blob/master/Dabblin.py")
 app.go()
