@@ -66,7 +66,7 @@ def press(button):
         print(matched)
     elif button == "Feature Matching":
         img1 = cv2.imread('brick_house.jpg', 0)
-        img2 = cv2.imread('brick.png', 0)
+        img2 = cv2.imread('brick_wall.jpg', 0)
         orb = cv2.ORB_create()
         kp1, desc1 = orb.detectAndCompute(img1, None)
         kp2, desc2 = orb.detectAndCompute(img2, None)
