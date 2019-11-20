@@ -63,7 +63,7 @@ def press(button):
         cv2.imshow('image', moarjpeg)
         cv2.waitKey(2000)
         cv2.destroyAllWindows()
-        print(matched)
+        #print(matched)
     elif button == "Feature Matching":
         img1 = cv2.imread('brick_house.jpg', 0)
         img2 = cv2.imread('brick_wall.jpg', 0)
@@ -76,6 +76,11 @@ def press(button):
         img3 = cv2.drawMatches(img1, kp1, img2, kp2, matches[:10], None,
                                flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
         plt.imshow(img3), plt.show()
+   # elif button == "Input Image":
+    #    Tk().withdraw()
+     #   filename = askopenfilename()
+      #  print(filename)
+       # Tk().destroy()
     elif button == "Close Program":
         app.stop()
 app.addButton("Image Matching", press)
