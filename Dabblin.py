@@ -45,7 +45,7 @@ import tkinter as Tk
 #plt.imshow(img3),plt.show()
 
 #AppJar
-app = gui("AppJar Testing", "400x200")
+app = gui("AppJar Testing", "800x600")
 app.addLabel("title", "AppJar Testing")
 app.setBg("light blue")
 app.setLabelBg("title", "white")
@@ -76,15 +76,16 @@ def press(button):
         img3 = cv2.drawMatches(img1, kp1, img2, kp2, matches[:10], None,
                                flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
         plt.imshow(img3), plt.show()
-   # elif button == "Input Image":
-    #    Tk().withdraw()
-     #   filename = askopenfilename()
-      #  print(filename)
-       # Tk().destroy()
+    elif button == "Input Image":
+        Tk().withdraw()
+        filename = Tk.askopenfilename(filetypes=[("Image files","*.jpg")])
+        print(filename)
+        Tk().destroy()
     elif button == "Close Program":
         app.stop()
 app.addButton("Image Matching", press)
 app.addButton("Feature Matching", press)
+app.addButton("Input Image", press)
 app.addButton("Close Program", press)
 app.addWebLink("View the code", "https://github.com/Jerry-P90/A_2ndRepo/blob/master/Dabblin.py")
 app.go()
