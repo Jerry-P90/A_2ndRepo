@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from appJar import gui
 import tkinter as Tk
-from tkinter import filedialog
+from tkinter import *
 
 #Template Matching
 #moarjpeg = cv2.imread('messi5.jpg')
@@ -79,11 +79,11 @@ def press(button):
         plt.imshow(img3), plt.show()
     elif button == "Input Image":
         root=Tk()
-        root.filename = filedialog.askopenfilename(initialdir="/Pictures/Rando trash", title="Select a file", filetypes=(("png files", "*.png"),("all files", "*.*")))
+        root.filename = filedialog.askopenfilename(initialdir="/gui/images", title="Select a file", filetypes=(("png files", "*.png"),("all files", "*.*")))
 
-        #Tk().withdraw()
-        #filename = filedialog.askopenfilename(filetypes=[("C:\Users\S1840085\Pictures\Rando trash",".jpg",".png",".jpeg")])
-        #print(filename)
+        Tk().withdraw()
+        filename = filedialog.askopenfilename(filetypes=(("C:\Users\S1840085\Pictures\Rando trash",".jpg",".png",".jpeg")))
+        print(filename)
     elif button == "Close Program":
         app.stop()
 app.addButton("Image Matching", press)
