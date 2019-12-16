@@ -77,13 +77,14 @@ def press(button):
         img3 = cv2.drawMatches(img1, kp1, img2, kp2, matches[:10], None,
                                flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
         plt.imshow(img3), plt.show()
-    elif button == "Input Image":
-        root=Tk()
-        root.filename = filedialog.askopenfilename(initialdir="/gui/images", title="Select a file", filetypes=(("png files", "*.png"),("all files", "*.*")))
+    #elif button == "Input Image":
+        #root=Tk()
+        #root.filename = filedialog.askopenfilename(initialdir="/gui/images", title="Select a file", filetypes=(("png files", "*.png"),("all files", "*.*")))
 
-        Tk().withdraw()
-        filename = filedialog.askopenfilename(filetypes=(("C:\Users\S1840085\Pictures\Rando trash",".jpg",".png",".jpeg")))
-        print(filename)
+        #Tk().withdraw()
+        #filename = filedialog.askopenfilename(filetypes=(("C:\Users\S1840085\Pictures\Rando trash",".jpg",".png",".jpeg")))
+
+        #print(filename)
     elif button == "Close Program":
         app.stop()
 app.addButton("Image Matching", press)
