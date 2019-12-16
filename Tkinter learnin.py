@@ -11,6 +11,8 @@ def myClick():
 #myLabel = Label(root, text="I am the Lorfecks")
 myLabel2 = Label(root, text="and I speek for the trez")
 myButton = Button(root , text="Click me, now", padx=100, command= myClick)
+button_quit = Button(root, text="Close Program", command= root.quit)
+button_quit.pack()
 
 #myLabel.grid(row=0, column=0)
 #myLabel2.grid(row=1, column=0)
